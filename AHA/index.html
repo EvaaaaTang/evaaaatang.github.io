@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Failure Cards: Understanding Algorithmic Assessment in Housing Services</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f5f5f5;
+            --card-bg: #fff;
+            --card-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .intro h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .intro p {
+            max-width: 800px;
+            margin: 1rem auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin: 3rem 0 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+        
+        .card-content p {
+            margin-bottom: 1.2rem;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.7rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .failure-cases {
+            margin: 4rem 0;
+        }
+        
+        .case-study {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .case-study h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .case-img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .case-description {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .case-description p {
+            margin-bottom: 1rem;
+        }
+        
+        .case-description ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .case-description li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-section {
+            margin: 4rem 0;
+            text-align: center;
+        }
+        
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-member {
+            flex: 0 1 200px;
+            text-align: center;
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        
+        .team-member h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-member p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>AI Failure Cards: Understanding and Supporting Grassroots Efforts to Mitigate AI Failures in Homeless Services</h1>
+            <p>This project explores algorithmic decision-making in housing allocation systems and documents community-centered approaches to mitigating AI failures</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="intro">
+            <h2>Project Overview</h2>
+            <p>This project is supported by an award from the Public Interest Technology University Network (PIT-UN).</p>
+            <p>AI-based decision support tools have been used in a wide range of high-stakes settings. However, many of them have failed. Past literature in FAccT contributes important insights into how to detect and mitigate AI failures from a technical perspective. Recently, there are growing calls to understand AI failures as socio-technical and to support community-centered, grassroots-based mitigations to AI failures, in addition to top-down approaches.</p>
+            <p>In this project, we present AI Failure Cards, a novel method for both improving communities' understanding of AI failures and for eliciting their current practices and desired strategies for mitigation, with a goal to better support those efforts in the future.</p>
+        </section>
+
+        <h2 class="section-title">AI Failure Cards: Study Materials</h2>
+        
+        <div class="cards-container">
+            <div class="card">
+                <img src="/cards/onboarding.jpg" alt="Onboarding Cards" class="card-img">
+                <div class="card-content">
+                    <h3>Onboarding Cards</h3>
+                    <p>The Onboarding Cards describe the basic decision-making process of the AI-based decision support tool, which serves as a foundation to surface socio-technical failures.</p>
+               
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="/cards/failure_charlie.jpg" alt="Failure Cards" class="card-img">
+                <div class="card-content">
+                    <h3>Failure Cards</h3>
+                    <p>The Failure Cards capture a series of common socio-technical failures of predictive AI via comicboarding, accompanied by an elicitation question.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="/cards/remediation card.pdf" alt="Mitigation Cards" class="card-img">
+                <div class="card-content">
+                    <h3>Mitigation Cards</h3>
+                    <p>The Mitigation Cards enumerate a number of potential mitigation strategies, serving as the foundation to help participants brainstorm actions they can take.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="onboarding-cards">Onboarding Cards</h2>
+        
+        <section class="case-study">
+            <h3>How the System Works</h3>
+            <div class="case-grid">
+                <img src="/cards/onboarding.jpg" alt="HAA workflow" class="case-img">
+                <div class="case-description">
+                    <p>The Housing Allocation Algorithm (HAA) is a type of predictive optimization algorithm that prioritizes housing resources for people experiencing homelessness. It has been deployed in a US county for more than three years.</p>
+                    <p>HAA's assessment begins with county staff verifying applicant eligibility, followed by running HAA, which uses personal data from the county's warehouse unit to predict how likely the applicant will experience the following three situations if they remain unhoused over the next 12 months:</p>
+                    <ul>
+                        <li>More than four emergency room visits based on healthcare utilization data</li>
+                        <li>At least one mental health inpatient stay funded by Medicaid</li>
+                        <li>At least one jail booking</li>
+                    </ul>
+                    <p>Applicants are then scored and placed on housing waitlists. In some cases, an alternative assessment (ALT HAA) based on self-reported data is used, especially when applicants' data is less than 90 days old or when their vulnerability isn't accurately reflected by HAA's score, though its use is generally discouraged.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <h2 class="section-title" id="failure-cards">Failure Cards</h2>
+        
+        <section class="failure-cases">
+            <div class="case-study">
+                <h3>Intervention vs. Prediction (Good prediction may not result in good decisions)</h3>
+                <div class="case-grid">
+                    <img src="/cards/failure_marley_blake.jpg" alt="Intervention vs. Prediction example" class="case-img">
+                    <div class="case-description">
+                        <p>Marley went to the ER more frequently than Blake during winter. Marley visited emergency rooms to get out of the cold, while Blake only went once when he was unconscious, despite having chronic diseases requiring extensive treatment.</p>
+                        <p>The computer gave Marley a higher score than Blake because it saw more ER visits for Marley. However, Blake's avoidance of hospitals due to past traumatic experiences meant the algorithm couldn't accurately assess his actual vulnerability.</p>
+                        <p><strong>Key issue:</strong> Higher frequency of hospital visits doesn't necessarily indicate greater need for housing support, yet the algorithm rewards this behavior.</p>
+                        <p><strong>Elicitation question:</strong> What do you think should be done to help people in a situation like Marley and Blake?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study">
+                <h3>Target-construct mismatch (Problematic proxies)</h3>
+                <div class="case-grid">
+                    <img src="/cards/failure_charlie.jpg" alt="Target-construct mismatch example" class="case-img">
+                    <div class="case-description">
+                        <p>Charlie has long been dealing with mental health issues and has been experiencing homelessness for a while. However, due to traumatic experiences in psychiatric hospitals, Charlie refused to seek help.</p>
+                        <p>When Charlie applies for housing assistance, the computer uses mental health in-patient visits as a measure of how vulnerable a person is. Because Charlie does not have any recent record of mental health visits, the algorithm predicts Charlie to be at low risk, leading to a low score and prolonged wait time for housing assistance.</p>
+                        <p><strong>Key issue:</strong> Using proxies (like mental health in-patient visits) that may not accurately reflect actual vulnerability.</p>
+                        <p><strong>Elicitation question:</strong> What do you think should be done to help people in a situation like Charlie?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study">
+                <h3>Distribution shifts (Training data rarely matches the deployment setting)</h3>
+                <div class="case-grid">
+                    <img src="/cards/failure_skylar.jpg" alt="Distribution shifts example" class="case-img">
+                    <div class="case-description">
+                        <p>In the summer, many unhoused people travel to the town. One of them is Skylar, who is from Ohio. Skylar was in his 20s, suffering from chronic diseases, and had no place to stay.</p>
+                        <p>Because Skylar does not hold a record in the county's public service system, the computer has no knowledge of his history. It could only rate Skylar using the county's data, resulting in a low score despite his vulnerability.</p>
+                        <p><strong>Key issue:</strong> Algorithms trained on local data failing to properly assess newcomers or those without local records.</p>
+                        <p><strong>Elicitation question:</strong> What do you think should be done to help people in a situation like Skylar?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study">
+                <h3>Limits to prediction (Social outcomes often defy meaningful prediction)</h3>
+                <div class="case-grid">
+                    <img src="/cards/failure_jamie_sam.jpg" alt="Limits to prediction example" class="case-img">
+                    <div class="case-description">
+                        <p>Jamie and Sam were experiencing homelessness. They shared similar demographic features and had similar public service records. Accordingly, they received the same score from the computer.</p>
+                        <p>One day, Sam fortunately found a place to stay for a while. On the other hand, Jamie got robbed and lost all of his belongings. However, because both received relatively low scores from the computer, they need to wait for a long time for housing assistance.</p>
+                        <p><strong>Key issue:</strong> The computer is not able to tell when a person needs immediate support because Jamie and Sam look the same to the computer. The score can't reflect each person's real situation.</p>
+                        <p><strong>Elicitation question:</strong> What do you think should be done to help people in a situation like Jamie and Sam?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study">
+                <h3>Disparate performance (Worse performance for some groups may be unavoidable)</h3>
+                <div class="case-grid">
+                    <img src="/cards/failure_casey.jpg" alt="Disparate performance example" class="case-img">
+                    <div class="case-description">
+                        <p>Casey was new to the street. He is 18, kicked out of his home because he was transgender. As a trans youth, he did not know how to protect himself from harassment and violence on the street. However, the computer gave Casey a low score.</p>
+                        <p>The computer ranks people with chronic homeless records higher, overlooking newcomers like Casey, who are often younger, who also desperately require immediate support. Although Casey desperately needed help, folks on the street longer would argue that they deserve to be picked up by the computer faster, no matter how vulnerable they are.</p>
+                        <p><strong>Key issue:</strong> The computer was unable to make equally accurate predictions about Casey's vulnerability, compared to the general homeless population.</p>
+                        <p><strong>Elicitation question:</strong> What do you think should be done to help people in a situation like Casey?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study">
+                <h3>Lack of contestability (Lack of viable mechanisms for contestability)</h3>
+                <div class="case-grid">
+                    <img src="/cards/failure_jayden.jpg" alt="Lack of contestability example" class="case-img">
+                    <div class="case-description">
+                        <p>Jayden recently left an abusive relationship where she was living with her partner. She applied for housing assistance as she was helpless on the street. When assessed by the computer, Jayden was told that she's not qualified for housing support.</p>
+                        <p>Jayden was very upset and wondered how much more she needed to prove herself eligible for housing. When she asked why, the frontline workers did not know why the computer categorized her as unqualified.</p>
+                        <p><strong>Key issue:</strong> Lack of transparency in how decisions are made and absence of mechanisms to challenge or appeal algorithmic decisions.</p>
+                        <p><strong>Elicitation question:</strong> What do you think should be done to help people in a situation like Jayden?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study">
+                <h3>Goodhart's Law (Decision-subjects may adapt in a way that defeats the goals of system)</h3>
+                <div class="case-grid">
+                    <img src="/cards/failure_alex_kai.jpg" alt="Goodhart's Law example" class="case-img">
+                    <div class="case-description">
+                        <p>Alex was on and off the street for a while. He's dealing with serious mental health challenges and lacks the skills and resources to protect himself. Kai was facing a similar situation as Alex.</p>
+                        <p>Alex tries to visit emergency rooms everyday, because he knows the computer would rank people higher if they are more likely to visit emergency rooms. Kai, however, did not know how to boost his score. As a result, Alex got a higher score than Kai. Alex is housed and Kai isn't, though they both needed housing equally urgently.</p>
+                        <p><strong>Key issue:</strong> The computer used certain rules to predict how vulnerable a person is. However, those rules might be easily gamed if you know how the system works.</p>
+                        <p><strong>Elicitation question:</strong> What do you think should be done to help people in a situation like Alex and Kai?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <h2 class="section-title" id="mitigation-cards">Mitigation Cards</h2>
+        
+        <div class="cards-container">
+            <div class="card">
+          
+                <div class="card-content">
+                    <h3>Use other types of records</h3>
+                    <p>For example, incorporating street medicine records and other forms of healthcare documentation beyond hospital visits.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+    
+                <div class="card-content">
+                    <h3>Use data that is not numerical</h3>
+                    <p>Incorporate descriptive words for assessment instead of relying solely on quantitative metrics.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+            
+                <div class="card-content">
+                    <h3>Include reasons for using public services</h3>
+                    <p>Document the reasons for public service use in records. For example, recording the reason for emergency room visits.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+      
+                <div class="card-content">
+                    <h3>Get more input from people</h3>
+                    <p>Prioritize human judgment rather than trusting the computer exclusively for decision-making.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+          
+                <div class="card-content">
+                    <h3>Better training programs</h3>
+                    <p>Educate service providers about trauma-informed care and harm reduction approaches.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <h3>Create advocacy channels</h3>
+                    <p>The county should offer ways for people to advocate for themselves if they think their score is lower than it should be.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <h3>Host community workshops</h3>
+                    <p>Encourage input from community members within various social groups, including LGBTQ groups and homeless youth.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <h3>Create welcoming institutions</h3>
+                    <p>Develop public institutions (e.g., hospitals) that are more welcoming and trauma-informed.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <h3>Create more housing resources</h3>
+                    <p>Increase the availability of housing options to better meet community needs.</p>
+                </div>
+            </div>
+        </div>
+        
+
+        <h2 class="section-title">Research Team</h2>
+        
+        <section class="team-section">
+            <p>This research was conducted by a team from Carnegie Mellon University, Point Park University, and independent researchers.</p>
+            
+            <div class="team-members">
+                <div class="team-member">
+                    <h4>Ningjing Tang</h4>
+                    <p>Carnegie Mellon University</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Jiayin Zhi</h4>
+                    <p>Carnegie Mellon University</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Tzu-Sheng Kuo</h4>
+                    <p>Carnegie Mellon University</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Calla Kainaroi</h4>
+                    <p>Independent Researcher</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Jeremy J. Northup</h4>
+                    <p>Point Park University</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Kenneth Holstein</h4>
+                    <p>Carnegie Mellon University</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Haiyi Zhu</h4>
+                    <p>Carnegie Mellon University</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Hoda Heidari</h4>
+                    <p>Carnegie Mellon University</p>
+                </div>
+                
+                <div class="team-member">
+                    <h4>Hong Shen</h4>
+                    <p>Carnegie Mellon University</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+
+</body>
+</html>
