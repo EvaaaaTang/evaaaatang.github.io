@@ -11,12 +11,6 @@ body {
     line-height: 1.75;
 }
 
-.menu,
-.pub__link a,
-.post-teaser__title {
-    font-family: 'Space Mono', monospace;
-}
-
 a {
     color: #cc3333;
     text-decoration: none;
@@ -44,9 +38,9 @@ strong {
 }
 
 .wrapper {
-    max-width: 900px;
+    max-width: 700px;
     margin: 40px auto;
-    padding: 0 80px;
+    padding: 0 60px;
     position: relative;
 }
 
@@ -73,24 +67,24 @@ strong {
 /* Header */
 .header {
     display: block;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     padding-top: 40px;
     border-bottom: 1px dashed #ccc;
-    padding-bottom: 30px;
+    padding-bottom: 24px;
 }
 
 .navigation {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .logo {
     font-family: 'Space Grotesk', 'Arial Black', sans-serif;
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 700;
     color: #dd2222;
     display: block;
     line-height: 1;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     letter-spacing: -2px;
 }
 
@@ -128,21 +122,20 @@ strong {
 }
 
 .social-links {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #999;
     list-style-type: none;
-    margin: 20px 0 0 0;
+    margin: 16px 0 0 0;
     padding: 0;
 }
 
 .social-links__entry {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 16px;
 }
 
 .social-links__entry a {
-    color: #999;
-    font-size: 0.9rem;
+    color: #cc6666;
 }
 
 .social-links__entry a:hover {
@@ -179,8 +172,8 @@ strong {
 }
 
 .post-teaser {
-    margin-bottom: 40px;
-    padding-bottom: 40px;
+    margin-bottom: 36px;
+    padding-bottom: 36px;
     border-bottom: 1px dashed #ddd;
 }
 
@@ -190,7 +183,7 @@ strong {
 
 .post-teaser__title {
     font-family: 'Space Mono', monospace;
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #222;
     font-weight: 700;
     line-height: 1.6;
@@ -199,23 +192,24 @@ strong {
 .pub__author {
     font-size: 0.9rem;
     color: #666;
-    margin: 12px 0 0 0;
+    margin: 10px 0 0 0;
     font-weight: 400;
 }
 
 .pub__link {
     font-size: 0.85rem;
     color: #888;
-    margin: 12px 0 0 0;
+    margin: 10px 0 0 0;
 }
 
 .pub__link a {
+    font-family: 'Space Mono', monospace;
     color: #cc3333;
-    margin-right: 16px;
+    margin-right: 12px;
     font-weight: 400;
     border: 1px solid #cc3333;
     padding: 2px 8px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -228,35 +222,24 @@ strong {
 
 /* About Page */
 #about-img {
-    border-radius: 0;
     max-width: 200px;
-    margin: 0 0 40px 0;
+    margin: 0 auto 40px;
     border: 3px solid #dd2222;
-    filter: grayscale(20%);
-    float: left;
-    margin-right: 40px;
+    filter: grayscale(30%) contrast(1.05);
+    transition: filter 0.3s ease;
 }
 
 #about-img:hover {
-    filter: grayscale(0%);
+    filter: grayscale(0%) contrast(1);
 }
 
 #describe-text {
     text-align: left;
-    overflow: hidden;
 }
 
 #describe-text p {
     color: #333;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-}
-
-/* Clearfix for floated image */
-#describe-text::after {
-    content: "";
-    display: table;
-    clear: both;
+    margin-bottom: 18px;
 }
 
 /* Blockquote */
@@ -271,19 +254,6 @@ blockquote p {
     font-size: 0.95rem;
     color: #555;
     font-style: italic;
-}
-
-/* Retro decorative elements */
-.retro-badge {
-    display: inline-block;
-    background: #3366cc;
-    color: #fff;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    border-radius: 2px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-left: 8px;
 }
 
 /* Selection */
@@ -309,6 +279,16 @@ blockquote p {
     background: #dd2222;
 }
 
+/* Footer */
+footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px dashed #ccc;
+    font-size: 0.8rem;
+    color: #999;
+    text-align: center;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .wrapper {
@@ -326,17 +306,11 @@ blockquote p {
 
     .menu__entry {
         display: block;
-        margin: 12px 0;
+        margin: 10px 0;
     }
 
     #about-img {
-        float: none;
-        margin: 0 auto 30px;
         max-width: 160px;
-    }
-
-    #describe-text {
-        text-align: left;
     }
 
     .wrapper::before,
@@ -355,6 +329,6 @@ blockquote p {
     }
 
     .post-teaser__title {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 }
