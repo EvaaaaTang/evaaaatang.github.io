@@ -5,8 +5,16 @@ layout: page
 
 <div>
 <ul class="list-posts">
+
 <li class="post-teaser">
-<span class="post-teaser__title">[FAccT '24] AI Failure Cards: Understanding and Supporting Grassroots Efforts to Mitigate AI Failures in Homeless Services </span>
+<span class="post-teaser__title">[AIES '25] A Closer Look at the Existing Risks of Generative AI: Mapping the Who, What, and How of Real-World Incidents</span>
+<p class="pub__author">
+Megan Li, Wendy Bickersteth, <strong>Ningjing Tang</strong>, Jason Hong, Lorrie Cranor, Hong Shen, Hoda Heidari
+</p>
+</li>
+
+<li class="post-teaser">
+<span class="post-teaser__title">[FAccT '24] AI Failure Cards: Understanding and Supporting Grassroots Efforts to Mitigate AI Failures in Homeless Services</span>
 <p class="pub__author">
 <strong>Ningjing Tang</strong>, Jiayin Zhi, Tzu-Sheng Kuo, Calla Kainaroi, Jeremy J. Northup, Kenneth Holstein, Haiyi Zhu, Hoda Heidari, and Hong Shen
 </p>
@@ -16,10 +24,18 @@ layout: page
 </a>
 </p>
 </li>
+
+<li class="post-teaser">
+<span class="post-teaser__title">[CSCW '24] Designing the Conversational Agent: Asking Follow-up Questions for Information Elicitation</span>
+<p class="pub__author">
+Jiaxiong Hu, Jingya Guo, <strong>Ningjing Tang</strong>, Xiaojuan Ma, Yuan Yao, Changyuan Yang, Yingqing Xu
+</p>
+</li>
+
 <li class="post-teaser">
 <span class="post-teaser__title">[CHI '22] Dare to Dream, Dare to Livestream: How E-Commerce Livestreaming Empowers Chinese Rural Women</span>
 <p class="pub__author">
-<strong>Ningjing Tang</strong>, Lei Tao, Bo Wen, Zhicong Lu 
+<strong>Ningjing Tang</strong>, Lei Tao, Bo Wen, Zhicong Lu
 </p>
 <p class="pub__link">
 <a href="./assets/chi22-528.pdf">
@@ -31,11 +47,5 @@ layout: page
 </p>
 </li>
 
-<li class="post-teaser">
-<span class="post-teaser__title">[CSCW '24] Designing the Conversational Agent: Asking Follow-up Questions for Information Elicitation</span>
-<p class="pub__author">
-Jiaxiong Hu, Jingya Guo, <strong>Ningjing Tang</strong>, Xiaojuan Ma, Yuan Yao, Changyuan Yang, Yingqing Xu
-</p>
-</li>
 </ul>
 </div>
