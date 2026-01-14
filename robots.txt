@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /assets/LLM_Refusal_Mental_Health_Manuscript.pdf
