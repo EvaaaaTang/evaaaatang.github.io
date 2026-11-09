@@ -1,0 +1,17 @@
+<ul class="social-links" aria-label="Contact and academic profiles">
+  {% if site.author.email %}
+  <li><a href="mailto:{{ site.author.email }}" class="social-links__entry" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fa fa-envelope-square" aria-hidden="true"></i></a></li>
+  {% endif %}
+  {% if site.author.github %}
+  <li><a href="https://github.com/{{ site.author.github }}" class="social-links__entry" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+  {% endif %}
+  {% if site.author.linkedin %}
+  <li><a href="https://in.linkedin.com/in/{{ site.author.linkedin }}" class="social-links__entry" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+  {% endif %}
+  {% if site.author.twitter %}
+  <li><a href="https://twitter.com/{{ site.author.twitter }}" class="social-links__entry" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+  {% endif %}
+  {% if site.author.googlescholar %}
+  <li><a href="https://scholar.google.com/citations?user={{ site.author.googlescholar }}&hl=en&oi=ao" class="social-links__entry" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i class="ai ai-google-scholar" aria-hidden="true"></i></a></li>
+  {% endif %}
+</ul>

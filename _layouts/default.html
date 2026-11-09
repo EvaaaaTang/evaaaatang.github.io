@@ -4,10 +4,24 @@
 {% include meta_tags/base.html %}
 {% include externals/styling.html %}
 </head>
-<body>
+{% assign is_home = false %}
+{% if page.url == '/' or page.url == '/index.html' or page.name == 'index.md' %}
+{% assign is_home = true %}
+{% endif %}
+<body{% if is_home %} class="home-page"{% endif %}>
 <div class="wrapper">
 {% include header.html %}
+<main class="site-content" id="main-content">
+{% if is_home %}
+<div class="about-layout" data-portrait-title="{{ site.title | upcase | escape }}">
 {{ content }}
+{% include social-links.html %}
+</div>
+{% else %}
+{{ content }}
+{% include social-links.html %}
+{% endif %}
+</main>
 </div>
 {% include externals/scripting.html %}
 </body>
