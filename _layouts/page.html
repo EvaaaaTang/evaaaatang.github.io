@@ -1,7 +1,9 @@
 ---
 layout: default
 ---
+{% unless page.publication_page %}
 {% include page/title.html %}
+{% endunless %}
 
 {{ content }}
 

@@ -13,9 +13,15 @@
 {% include header.html %}
 <main class="site-content" id="main-content">
 {% if is_home %}
-<div class="about-layout" data-portrait-title="{{ site.title | upcase | escape }}">
+<div class="about-layout">
+<div class="about-heading">
+  <h1 class="about-heading__title" aria-label="About me">
+    <span class="about-heading__about">about</span>
+    <span class="about-heading__me">me!</span>
+  </h1>
+  <a href="{{ '/' | prepend: site.baseurl }}" class="about-heading__name">{{ site.title }}</a>
+</div>
 {{ content }}
-{% include social-links.html %}
 </div>
 {% else %}
 {{ content }}
